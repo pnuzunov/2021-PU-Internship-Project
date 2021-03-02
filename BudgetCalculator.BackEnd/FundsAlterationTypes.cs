@@ -12,7 +12,7 @@ namespace BudgetCalculator.BackEnd
         {
             get
             {
-                return "prihod";
+                return "приход";
             }
 
             private set { }
@@ -21,7 +21,7 @@ namespace BudgetCalculator.BackEnd
         {
             get
             {
-                return "razhod";
+                return "разход";
             }
 
             private set { }
