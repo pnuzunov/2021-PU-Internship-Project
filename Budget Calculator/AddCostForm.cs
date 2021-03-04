@@ -14,14 +14,14 @@ namespace Budget_Calculator
 {
     public partial class AddCostForm : Form
     {
-        public AddCostForm()
+        public AddCostForm(string type)
         {
             InitializeComponent();
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
+            MainForm mainForm = new MainForm(FundsAlterationTypes.EXPENSE);
             this.Hide();
             mainForm.Show();
         }
@@ -34,7 +34,7 @@ namespace Budget_Calculator
         private void ButtonAddCost_Click(object sender, EventArgs e)
         {
             ConnectionManager connectionManager = new ConnectionManager();
-            double amount = double.Parse(textBoxCost.Text);
+            double amount = (double) numericUpDownCost.Value;
             connectionManager.AddAlteration(
                 amount,
                 FundsAlterationTypes.EXPENSE,
@@ -42,6 +42,11 @@ namespace Budget_Calculator
                 dateTimePickerCost.Value
                 );
             ButtonBack.PerformClick();
+        }
+
+        private void AddCostForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

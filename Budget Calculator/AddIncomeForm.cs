@@ -14,14 +14,14 @@ namespace Budget_Calculator
 {
     public partial class AddIncomeForm : Form
     {
-        public AddIncomeForm()
+        public AddIncomeForm(String type)
         {
             InitializeComponent();
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
+            MainForm mainForm = new MainForm(FundsAlterationTypes.INCOME);
             this.Hide();
             mainForm.Show();
         }
@@ -34,7 +34,7 @@ namespace Budget_Calculator
         private void ButtonAddIncome_Click(object sender, EventArgs e)
         {
             ConnectionManager connectionManager = new ConnectionManager();
-            double amount = double.Parse(textBoxIncome.Text);
+            double amount = (double) numericUpDownIncome.Value;
             connectionManager.AddAlteration(
                 amount,
                 FundsAlterationTypes.INCOME,
@@ -42,6 +42,11 @@ namespace Budget_Calculator
                 dateTimePickerIncome.Value
                 );
             ButtonBack.PerformClick();
+        }
+
+        private void AddIncomeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

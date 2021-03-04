@@ -10,13 +10,17 @@ namespace BudgetCalculator.BackEnd.Models
     public class FundsAlteration
     {
         [Key]
-        public int Id { get; private set; }
-        public double Amount { get; private set; }
-        public String Type { get; private set; }
-        public DateTime? Date { get; private set; }
-        public bool Periodic { get; private set; }
-        public String Comment { get; private set; }
+        public int Id { get; set; }
+        public double Amount { get; set; }
+        public String Type { get; set; }
+        public DateTime? Date { get; set; }
+        public bool Periodic { get; set; }
+        public String Comment { get; set; }
 
+        public FundsAlteration()
+        {
+
+        }
         public FundsAlteration(double amount, String type, DateTime? date, bool periodic = false, String comment = null)
         {
             this.Amount = amount;
@@ -24,6 +28,11 @@ namespace BudgetCalculator.BackEnd.Models
             this.Date = date;
             this.Periodic = periodic;
             this.Comment = comment;
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Type}: {this.Amount}лв, {this.Date}";
         }
     }
 }

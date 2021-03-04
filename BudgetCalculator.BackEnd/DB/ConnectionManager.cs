@@ -11,6 +11,51 @@ namespace BudgetCalculator.BackEnd.DB
 {
     public class ConnectionManager
     {
+        #region CRUD strings
+        private static String CREATE = "create";
+        private static String READ = "read";
+        private static String UPDATE = "update";
+        private static String DELETE = "delete";
+        #endregion
+
+        #region return strings
+        public static String ROW_ADDED_SUCCESSFULLY
+        {
+            get { return "Успешно добавен запис."; }
+            private set { }
+        }
+
+        public static String ROW_UPDATED_SUCCESSFULLY
+        {
+            get { return "Успешно редактиран запис."; }
+            private set { }
+        }
+
+        public static String ROW_DELETED_SUCCESSFULLY
+        {
+            get { return "Успешно изтрит запис."; }
+            private set { }
+        }
+
+        public static String INSUFFICIENT_FUNDS
+        {
+            get { return "Недостатъчни средства!"; }
+            private set { }
+        }
+
+        public static String INVALID_DATA
+        {
+            get { return "Грешка! Невалидни данни."; }
+            private set { }
+        }
+
+        public static String GENERIC_ERROR
+        {
+            get { return "Грешка!"; }
+            private set { }
+        }
+
+        #endregion return strings
 
         public ConnectionManager()
         {
@@ -31,45 +76,61 @@ namespace BudgetCalculator.BackEnd.DB
 
             using(var context = new SystemDbContext())
             {
-                if(amount <= 0 ||
-                   (!type.Equals(FundsAlterationTypes.INCOME) && !type.Equals(FundsAlterationTypes.EXPENSE)))
-                {
-                    return "Грешка! Невалидни данни.";
-                }
-
-                if(isPeriodic)
-                {
-                    return "Грешка!"; //to be implemented
-                }
-
-                if(type.Equals(FundsAlterationTypes.EXPENSE)) {
-                    double balance = this.CalcBalance();
-                    if(amount > balance)
-                    {
-                        return "Недостатъчни средства!";
-                    }
-                }
 
                 var fundsAlterations = context.Set<FundsAlteration>();
                 DateTime? dt = (dateTime != null ? dateTime : DateTime.Now);
-                fundsAlterations.Add(new FundsAlteration(amount, type, dt, isPeriodic));
-                
-                context.SaveChanges();
-                return "Успешно добавен запис.";
+
+                String msg = "";
+                FundsAlteration fa = new FundsAlteration(amount, type, dt, isPeriodic);
+                if (IsValid(fa, CREATE, out msg))
+                {
+                    fundsAlterations.Add(fa);
+                    context.SaveChanges();
+                }
+                return msg;
             }
 
         }
 
-        public void DeleteAlteration(int id)
+        public String UpdateAlteration(int id, FundsAlteration newAlteration)
         {
             using (var context = new SystemDbContext())
             {
+                String msg = "";
+                if (!IsValid(newAlteration, UPDATE, out msg))
+                    return msg;
+
+                var fundsAlterations = context.Set<FundsAlteration>();
+                var fundsAlteration = fundsAlterations.Where(x => x.Id == id).FirstOrDefault();
+                fundsAlteration.Amount = newAlteration.Amount;
+                fundsAlteration.Comment = newAlteration.Comment;
+                fundsAlteration.Date = newAlteration.Date;
+                fundsAlteration.Type = newAlteration.Type;
+                fundsAlteration.Periodic = newAlteration.Periodic;
+
+                if (!IsValid(fundsAlteration, UPDATE, out msg))
+                    return msg;
+
+                context.SaveChanges();
+                return msg;
+            }
+        }
+
+        public String DeleteAlteration(int id)
+        {
+            using (var context = new SystemDbContext())
+            {
+                String msg = "";
                 var fundsAlterations = context.Set<FundsAlteration>();
                 FundsAlteration fundsAlteration = fundsAlterations
                     .Where(x => x.Id == id)
                     .FirstOrDefault();
-                if(fundsAlteration != null)
+                if (fundsAlteration != null && IsValid(fundsAlteration, DELETE, out msg))
+                {
                     fundsAlterations.Remove(fundsAlteration);
+                }
+                context.SaveChanges();
+                return msg;
             }
         }
 
@@ -102,6 +163,43 @@ namespace BudgetCalculator.BackEnd.DB
 
                 return balance;
             }
+        }
+
+        private bool IsValid(FundsAlteration fundsAlteration, String type, out String msg)
+        {
+            if (fundsAlteration.Amount <= 0 ||
+                   (!fundsAlteration.Type.Equals(FundsAlterationTypes.INCOME) && !fundsAlteration.Type.Equals(FundsAlterationTypes.EXPENSE)))
+            {
+                msg = INVALID_DATA;
+                return false;
+            }
+
+            if (fundsAlteration.Periodic)
+            {
+                msg = GENERIC_ERROR; //to be implemented
+                return false;
+            }
+
+            if (fundsAlteration.Type.Equals(FundsAlterationTypes.EXPENSE))
+            {
+                double balance = this.CalcBalance();
+                if (fundsAlteration.Amount > balance)
+                {
+                    msg = INSUFFICIENT_FUNDS;
+                    return false;
+                }
+            }
+
+            switch (type)
+            {
+                case "create": msg = ROW_ADDED_SUCCESSFULLY; return true;
+                case "update": msg = ROW_UPDATED_SUCCESSFULLY; return true;
+                case "delete": msg = ROW_DELETED_SUCCESSFULLY; return true;
+                default: msg = "null";  return true;
+            }
+
+            // msg = ROW_ADDED_SUCCESSFULLY;
+            // return true;
         }
     }
 }
