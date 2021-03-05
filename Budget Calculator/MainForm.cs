@@ -34,16 +34,25 @@ namespace Budget_Calculator
 
         private void ButtonAddIncomeForm_Click(object sender, EventArgs e)
         {
-            AddIncomeForm addIncomeForm = new AddIncomeForm(FundsAlterationTypes.INCOME);
+            //AddIncomeForm addIncomeForm = new AddIncomeForm(FundsAlterationTypes.INCOME);
+            //this.Hide();
+            //addIncomeForm.Show();
+
+            AddForm form = new AddForm(null, FundsAlterationTypes.INCOME);
             this.Hide();
-            addIncomeForm.Show();
+            form.Show();
+
         }
 
         private void ButtonAddCostForm_Click(object sender, EventArgs e)
         {
-            AddCostForm addCostForm = new AddCostForm(FundsAlterationTypes.EXPENSE);
+            //AddCostForm addCostForm = new AddCostForm(FundsAlterationTypes.EXPENSE);
+            //this.Hide();
+            //addCostForm.Show();
+
+            AddForm form = new AddForm(null, FundsAlterationTypes.EXPENSE);
             this.Hide();
-            addCostForm.Show();
+            form.Show();
         }
 
         private void ButtonEditForm_Click(object sender, EventArgs e)
