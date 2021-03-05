@@ -32,7 +32,9 @@ namespace BudgetCalculator.BackEnd.Models
 
         public override string ToString()
         {
-            return $"{this.Type}: {this.Amount}лв, {this.Date}";
+            String periodic = "";
+            if (this.Periodic) periodic = "(повтарящ се)";
+            return $"{periodic}{this.Type}: {this.Amount}лв, {this.Date}";
         }
     }
 }

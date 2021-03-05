@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB\ConnectionManager.cs" />
+    <Compile Include="DB\DateChecker.cs" />
     <Compile Include="DB\SystemDbContext.cs" />
     <Compile Include="FundsAlterationTypes.cs" />
     <Compile Include="Migrations\202102211521070_AddFundsTable.cs" />

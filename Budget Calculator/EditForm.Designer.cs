@@ -88,9 +88,9 @@ namespace Budget_Calculator
             "45",
             "345",
             "345"});
-            this.ListBoxEdit.Location = new System.Drawing.Point(76, 12);
+            this.ListBoxEdit.Location = new System.Drawing.Point(51, 12);
             this.ListBoxEdit.Name = "ListBoxEdit";
-            this.ListBoxEdit.Size = new System.Drawing.Size(247, 275);
+            this.ListBoxEdit.Size = new System.Drawing.Size(298, 275);
             this.ListBoxEdit.TabIndex = 1;
             // 
             // ButtonEdit
@@ -137,7 +137,7 @@ namespace Budget_Calculator
             // 
             // EditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(400, 468);

@@ -203,8 +203,8 @@ namespace Budget_Calculator
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавяне на разход";
             this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddUpdateForm_FormClosing);
-            this.Load += new System.EventHandler(this.AddUpdateForm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddForm_FormClosing);
+            this.Load += new System.EventHandler(this.AddForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

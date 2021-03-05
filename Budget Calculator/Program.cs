@@ -14,9 +14,10 @@ namespace Budget_Calculator
         [STAThread]
         static void Main()
         {
+            BudgetCalculator.BackEnd.DB.DateChecker dateChecker = new BudgetCalculator.BackEnd.DB.DateChecker();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MainForm());            
         }
     }
 }

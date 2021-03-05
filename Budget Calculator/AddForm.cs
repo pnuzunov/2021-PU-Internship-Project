@@ -52,37 +52,19 @@ namespace Budget_Calculator
             ButtonBack.PerformClick();
         }
 
-        private void ButtonUpdate_Click(object sender, EventArgs e)
-        {
-            ConnectionManager connectionManager = new ConnectionManager();
-
-            String result = connectionManager.UpdateAlteration(this.fundsAlteration.Id, new FundsAlteration()
-            {
-                Amount = (double) numericUpDownAmount.Value,
-                Type = type,
-                Periodic = radioButtonRepeated.Checked,
-                Date = dateTimePickerDate.Value
-            });
-            MessageBox.Show(result);
-            if(result.Equals(ConnectionManager.ROW_UPDATED_SUCCESSFULLY))
-            {
-                ButtonBack.PerformClick();
-            }
-        }
-
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm(FundsAlterationTypes.EXPENSE);
+            MainForm mainForm = new MainForm();
             this.Hide();
             mainForm.Show();
         }
 
-        private void AddUpdateForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void AddForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
-        private void AddUpdateForm_Load(object sender, EventArgs e)
+        private void AddForm_Load(object sender, EventArgs e)
         {
 
         }

@@ -174,11 +174,11 @@ namespace BudgetCalculator.BackEnd.DB
                 return false;
             }
 
-            if (fundsAlteration.Periodic)
-            {
-                msg = GENERIC_ERROR; //to be implemented
-                return false;
-            }
+            //if (fundsAlteration.Periodic)
+            //{
+            //    msg = GENERIC_ERROR; //to be implemented
+            //    return false;
+            //}
 
             if (fundsAlteration.Type.Equals(FundsAlterationTypes.EXPENSE))
             {
