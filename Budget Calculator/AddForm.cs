@@ -18,30 +18,25 @@ namespace Budget_Calculator
         private String type;
         private FundsAlteration fundsAlteration;
 
-        public AddForm(string type)
+        public decimal Amount { get { return numericUpDownAmount.Value; } set { numericUpDownAmount.Value = value; } }
+        public bool Repeated { get { return radioButtonRepeated.Checked; } set { radioButtonRepeated.Checked = value; } }
+        public DateTime Date { get { return dateTimePickerDate.Value; } set { dateTimePickerDate.Value = value; } }
+        public Button ConfirmButton { get { return ButtonAdd; } }
+        public Button BackButton { get { return ButtonBack; } }
+
+        public AddForm()
         {
             InitializeComponent();
         }
 
-        public AddForm(FundsAlteration fundsAlteration, String type)
+        public AddForm(String type)
         {
             InitializeComponent();
-            if(fundsAlteration != null)
-            {
-                this.type = fundsAlteration.Type;
-                this.fundsAlteration = fundsAlteration;
-                numericUpDownAmount.Value = (decimal) fundsAlteration.Amount;
-                dateTimePickerDate.Value = (DateTime) fundsAlteration.Date;
-                radioButtonRepeated.Checked = fundsAlteration.Periodic;
-                ButtonAddUpdate.Text = "Редактирай";
-                ButtonAddUpdate.Click += ButtonUpdate_Click;
-            }
-            else
-            {
-                this.type = type;
-                ButtonAddUpdate.Text = $"Добави {type}";
-                ButtonAddUpdate.Click += ButtonAdd_Click;
-            }
+
+            this.type = type;
+            ButtonAdd.Text = $"Добави {type}";
+            ButtonAdd.Click += ButtonAdd_Click;
+            ButtonBack.Click += ButtonBack_Click;
         }
 
         private void ButtonAdd_Click(object sender, EventArgs e)

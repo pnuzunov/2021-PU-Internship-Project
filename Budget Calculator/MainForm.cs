@@ -38,7 +38,7 @@ namespace Budget_Calculator
             //this.Hide();
             //addIncomeForm.Show();
 
-            AddForm form = new AddForm(null, FundsAlterationTypes.INCOME);
+            AddForm form = new AddForm(FundsAlterationTypes.INCOME);
             this.Hide();
             form.Show();
 
@@ -50,7 +50,7 @@ namespace Budget_Calculator
             //this.Hide();
             //addCostForm.Show();
 
-            AddForm form = new AddForm(null, FundsAlterationTypes.EXPENSE);
+            AddForm form = new AddForm(FundsAlterationTypes.EXPENSE);
             this.Hide();
             form.Show();
         }

@@ -30,7 +30,7 @@ namespace Budget_Calculator
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddForm));
-            this.ButtonAddUpdate = new System.Windows.Forms.Button();
+            this.ButtonAdd = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
             this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.labelInfo = new System.Windows.Forms.Label();
@@ -47,19 +47,19 @@ namespace Budget_Calculator
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ButtonAddUpdate
+            // ButtonAdd
             // 
-            this.ButtonAddUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.ButtonAddUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonAddUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAddUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonAddUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ButtonAddUpdate.Location = new System.Drawing.Point(12, 238);
-            this.ButtonAddUpdate.Name = "ButtonAddUpdate";
-            this.ButtonAddUpdate.Size = new System.Drawing.Size(180, 50);
-            this.ButtonAddUpdate.TabIndex = 5;
-            this.ButtonAddUpdate.Text = "<Placeholder>";
-            this.ButtonAddUpdate.UseVisualStyleBackColor = false;
+            this.ButtonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.ButtonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.ButtonAdd.Location = new System.Drawing.Point(12, 238);
+            this.ButtonAdd.Name = "ButtonAdd";
+            this.ButtonAdd.Size = new System.Drawing.Size(180, 50);
+            this.ButtonAdd.TabIndex = 5;
+            this.ButtonAdd.Text = "<Placeholder>";
+            this.ButtonAdd.UseVisualStyleBackColor = false;
             // 
             // ButtonBack
             // 
@@ -74,7 +74,6 @@ namespace Budget_Calculator
             this.ButtonBack.TabIndex = 6;
             this.ButtonBack.Text = "Назад";
             this.ButtonBack.UseVisualStyleBackColor = false;
-            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
             // dateTimePickerDate
             // 
@@ -183,9 +182,9 @@ namespace Budget_Calculator
             this.panel4.Size = new System.Drawing.Size(500, 86);
             this.panel4.TabIndex = 13;
             // 
-            // AddUpdateForm
+            // AddForm
             // 
-            this.AcceptButton = this.ButtonAddUpdate;
+            this.AcceptButton = this.ButtonAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
@@ -195,12 +194,12 @@ namespace Budget_Calculator
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ButtonBack);
-            this.Controls.Add(this.ButtonAddUpdate);
+            this.Controls.Add(this.ButtonAdd);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "AddUpdateForm";
+            this.Name = "AddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавяне на разход";
             this.TopMost = true;
@@ -217,7 +216,7 @@ namespace Budget_Calculator
         }
 
         #endregion
-        private System.Windows.Forms.Button ButtonAddUpdate;
+        private System.Windows.Forms.Button ButtonAdd;
         private System.Windows.Forms.Button ButtonBack;
         private System.Windows.Forms.DateTimePicker dateTimePickerDate;
         private System.Windows.Forms.Label labelInfo;

@@ -32,9 +32,13 @@ namespace Budget_Calculator
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            EditingForm editingForm = new EditingForm((FundsAlteration)ListBoxEdit.SelectedItem);
+            //EditingForm editingForm = new EditingForm((FundsAlteration)ListBoxEdit.SelectedItem);
+            //this.Hide();
+            //editingForm.Show();
+
+            UpdateForm form = new UpdateForm((FundsAlteration)ListBoxEdit.SelectedItem);
             this.Hide();
-            editingForm.Show();
+            form.Show();
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
