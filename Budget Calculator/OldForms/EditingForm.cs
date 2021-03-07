@@ -49,9 +49,9 @@ namespace Budget_Calculator
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            EditForm editForm = new EditForm();
+            //EditForm editForm = new EditForm();
             this.Hide();
-            editForm.Show();
+            //editForm.Show();
         }
     }
 }

@@ -16,8 +16,7 @@ namespace Budget_Calculator
     public partial class AddForm : Form
     {
         private String type;
-        private FundsAlteration fundsAlteration;
-
+        private Form parent;
         public decimal Amount { get { return numericUpDownAmount.Value; } set { numericUpDownAmount.Value = value; } }
         public bool Repeated { get { return radioButtonRepeated.Checked; } set { radioButtonRepeated.Checked = value; } }
         public DateTime Date { get { return dateTimePickerDate.Value; } set { dateTimePickerDate.Value = value; } }
@@ -29,10 +28,11 @@ namespace Budget_Calculator
             InitializeComponent();
         }
 
-        public AddForm(String type)
+        public AddForm(Form parent, String type)
         {
             InitializeComponent();
 
+            this.parent = parent;
             this.type = type;
             ButtonAdd.Text = $"Добави {type}";
             ButtonAdd.Click += ButtonAdd_Click;
@@ -54,14 +54,13 @@ namespace Budget_Calculator
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
-            this.Hide();
-            mainForm.Show();
+            parent.Show();
+            this.Close();
         }
 
         private void AddForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void AddForm_Load(object sender, EventArgs e)

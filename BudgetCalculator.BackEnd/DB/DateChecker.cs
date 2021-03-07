@@ -10,10 +10,15 @@ namespace BudgetCalculator.BackEnd.DB
 {
     public class DateChecker
     {
+        private Thread checkDateThread;
         public DateChecker()
         {
+       
+        }
 
-            Thread newThread = new Thread(() =>
+        public void Start()
+        {
+            checkDateThread = new Thread(() =>
             {
                 ConnectionManager connectionManager = new ConnectionManager();
                 for (; ; )
@@ -30,7 +35,12 @@ namespace BudgetCalculator.BackEnd.DB
                 }
             });
 
-            newThread.Start();
+            checkDateThread.Start();
+        }
+
+        public void Stop()
+        {
+            checkDateThread.Abort();
         }
     }
 }

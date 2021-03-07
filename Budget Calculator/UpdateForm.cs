@@ -15,9 +15,12 @@ namespace Budget_Calculator
     public partial class UpdateForm : AddForm
     {
         private FundsAlteration fundsAlteration;
-        public UpdateForm(FundsAlteration fundsAlteration)
+        private Form parent;
+        public UpdateForm(Form parent, FundsAlteration fundsAlteration)
         {
             InitializeComponent();
+
+            this.parent = parent;
 
             this.fundsAlteration = fundsAlteration;
             this.Amount = (decimal) fundsAlteration.Amount;
@@ -49,9 +52,8 @@ namespace Budget_Calculator
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            EditForm editForm = new EditForm();
-            this.Hide();
-            editForm.Show();
+            parent.Show();
+            this.Close();
         }
     }
 }

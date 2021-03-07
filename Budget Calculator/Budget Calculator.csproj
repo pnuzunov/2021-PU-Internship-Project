@@ -62,11 +62,17 @@
     <Compile Include="AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddIncomeForm.cs">
+    <Compile Include="OldForms\AddIncomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddIncomeForm.Designer.cs">
+    <Compile Include="OldForms\AddIncomeForm.Designer.cs">
       <DependentUpon>AddIncomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PieChartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PieChartControl.Designer.cs">
+      <DependentUpon>PieChartControl.cs</DependentUpon>
     </Compile>
     <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
@@ -74,10 +80,10 @@
     <Compile Include="EditForm.Designer.cs">
       <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditingForm.cs">
+    <Compile Include="OldForms\EditingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditingForm.Designer.cs">
+    <Compile Include="OldForms\EditingForm.Designer.cs">
       <DependentUpon>EditingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -86,10 +92,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddCostForm.cs">
+    <Compile Include="OldForms\AddCostForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCostForm.Designer.cs">
+    <Compile Include="OldForms\AddCostForm.Designer.cs">
       <DependentUpon>AddCostForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -103,16 +109,19 @@
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddCostForm.resx">
+    <EmbeddedResource Include="OldForms\AddCostForm.resx">
       <DependentUpon>AddCostForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIncomeForm.resx">
+    <EmbeddedResource Include="OldForms\AddIncomeForm.resx">
       <DependentUpon>AddIncomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PieChartControl.resx">
+      <DependentUpon>PieChartControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditingForm.resx">
+    <EmbeddedResource Include="OldForms\EditingForm.resx">
       <DependentUpon>EditingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -149,6 +158,10 @@
     <ProjectReference Include="..\BudgetCalculator.BackEnd\BudgetCalculator.BackEnd.csproj">
       <Project>{bb4bd713-d0b6-473e-a5dc-0863d46f58bb}</Project>
       <Name>BudgetCalculator.BackEnd</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BudgetCalculator.Controls\BudgetCalculator.Controls.csproj">
+      <Project>{dacce76d-4f51-4a63-abc4-5b71bf35d9d5}</Project>
+      <Name>BudgetCalculator.Controls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

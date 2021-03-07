@@ -14,10 +14,12 @@ namespace Budget_Calculator
 {
     public partial class EditForm : Form
     {
-        public EditForm()
+        private Form parent;
+        public EditForm(Form parent)
         {
             InitializeComponent();
 
+            this.parent = parent;
             ConnectionManager connectionManager = new ConnectionManager();
             this.ListBoxEdit.Items.Clear();
             ListBoxEdit.DataSource = connectionManager.GetAlterations();
@@ -25,20 +27,15 @@ namespace Budget_Calculator
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
-            this.Hide();
-            mainForm.Show();
+            parent.Show();
+            this.Close();
         }
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            //EditingForm editingForm = new EditingForm((FundsAlteration)ListBoxEdit.SelectedItem);
-            //this.Hide();
-            //editingForm.Show();
-
-            UpdateForm form = new UpdateForm((FundsAlteration)ListBoxEdit.SelectedItem);
-            this.Hide();
+            UpdateForm form = new UpdateForm(this, (FundsAlteration)ListBoxEdit.SelectedItem);
             form.Show();
+            this.Hide();
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
