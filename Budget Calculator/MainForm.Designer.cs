@@ -45,7 +45,7 @@ namespace Budget_Calculator
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.numericUpDownSum = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.budgetPieChart = new BudgetCalculator.Controls.BudgetPieChart();
+            this.pieChart = new BudgetCalculator.Controls.PieChart();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -165,7 +165,7 @@ namespace Budget_Calculator
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.budgetPieChart);
+            this.panel2.Controls.Add(this.pieChart);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(173, 332);
             this.panel2.Name = "panel2";
@@ -247,14 +247,14 @@ namespace Budget_Calculator
             this.panel4.Size = new System.Drawing.Size(21, 40);
             this.panel4.TabIndex = 11;
             // 
-            // budgetPieChart
+            // pieChart
             // 
-            this.budgetPieChart.BackColor = System.Drawing.Color.White;
-            this.budgetPieChart.Location = new System.Drawing.Point(508, 28);
-            this.budgetPieChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.budgetPieChart.Name = "budgetPieChart";
-            this.budgetPieChart.Size = new System.Drawing.Size(150, 150);
-            this.budgetPieChart.TabIndex = 0;
+            this.pieChart.BackColor = System.Drawing.Color.Transparent;
+            this.pieChart.Location = new System.Drawing.Point(26, 28);
+            this.pieChart.Margin = new System.Windows.Forms.Padding(4);
+            this.pieChart.Name = "pieChart";
+            this.pieChart.Size = new System.Drawing.Size(632, 150);
+            this.pieChart.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -310,7 +310,7 @@ namespace Budget_Calculator
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.NumericUpDown numericUpDownSum;
         private System.Windows.Forms.Panel panel4;
-        private BudgetCalculator.Controls.BudgetPieChart budgetPieChart;
+        private BudgetCalculator.Controls.PieChart pieChart;
     }
 }
 

@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A6C05614-B02B-4DA6-A35A-419A36B5625F}</ProjectGuid>
+    <ProjectGuid>bdfcfad6-d9d6-4341-982b-52a713f57d21</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>BudgetCalculator.Controls</RootNamespace>
-    <AssemblyName>BudgetCalculator.Controls</AssemblyName>
+    <RootNamespace>PieChart</RootNamespace>
+    <AssemblyName>PieChart</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -30,37 +30,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System"/>
+    
+    <Reference Include="System.Core"/>
+    <Reference Include="System.Xml.Linq"/>
+    <Reference Include="System.Data.DataSetExtensions"/>
+    
+    
+    <Reference Include="Microsoft.CSharp"/>
+    
+    <Reference Include="System.Data"/>
+    <Reference Include="System.Drawing"/>
+    
+    <Reference Include="System.Net.Http"/>
+    
+    <Reference Include="System.Windows.Forms"/>
+    <Reference Include="System.Xml"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PieChart.cs">
+    <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PieChart.Designer.cs">
-      <DependentUpon>PieChart.cs</DependentUpon>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="PieChart.resx">
-      <DependentUpon>PieChart.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BudgetCalculator.BackEnd\BudgetCalculator.BackEnd.csproj">
-      <Project>{bb4bd713-d0b6-473e-a5dc-0863d46f58bb}</Project>
-      <Name>BudgetCalculator.BackEnd</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-</Project>
+ </Project>

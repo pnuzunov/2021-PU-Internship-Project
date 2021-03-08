@@ -27,6 +27,8 @@ namespace Budget_Calculator
             
             this.Load += MainForm_CalcBalance;
             this.VisibleChanged += MainForm_CalcBalance;
+
+            this.pieChart.DrawFromData(connectionManager.GetAlterations());
         }
 
         public MainForm(String type)

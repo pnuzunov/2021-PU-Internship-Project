@@ -68,12 +68,6 @@
     <Compile Include="OldForms\AddIncomeForm.Designer.cs">
       <DependentUpon>AddIncomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PieChartControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\PieChartControl.Designer.cs">
-      <DependentUpon>PieChartControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,9 +108,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OldForms\AddIncomeForm.resx">
       <DependentUpon>AddIncomeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PieChartControl.resx">
-      <DependentUpon>PieChartControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
@@ -160,7 +151,7 @@
       <Name>BudgetCalculator.BackEnd</Name>
     </ProjectReference>
     <ProjectReference Include="..\BudgetCalculator.Controls\BudgetCalculator.Controls.csproj">
-      <Project>{dacce76d-4f51-4a63-abc4-5b71bf35d9d5}</Project>
+      <Project>{A6C05614-B02B-4DA6-A35A-419A36B5625F}</Project>
       <Name>BudgetCalculator.Controls</Name>
     </ProjectReference>
   </ItemGroup>

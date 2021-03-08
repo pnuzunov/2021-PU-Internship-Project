@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BudgetCalculator.Controls")]
+[assembly: AssemblyTitle("PieChart")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BudgetCalculator.Controls")]
+[assembly: AssemblyProduct("PieChart")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a6c05614-b02b-4da6-a35a-419a36b5625f")]
+[assembly: Guid("bdfcfad6-d9d6-4341-982b-52a713f57d21")]
 
 // Version information for an assembly consists of the following four values:
 //
