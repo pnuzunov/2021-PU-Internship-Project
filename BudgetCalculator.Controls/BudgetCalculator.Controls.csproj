@@ -49,12 +49,6 @@
       <DependentUpon>BudgetPieChart.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PieChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PieChart.Designer.cs">
-      <DependentUpon>PieChart.cs</DependentUpon>
-    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +56,11 @@
       <Project>{bb4bd713-d0b6-473e-a5dc-0863d46f58bb}</Project>
       <Name>BudgetCalculator.BackEnd</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BudgetPieChart.resx">
+      <DependentUpon>BudgetPieChart.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,9 +28,7 @@ namespace BudgetCalculator.Controls
                 Color.Magenta,
                 Color.Cyan
             };
-            Graphics g = this.CreateGraphics();
-            g.DrawEllipse(new Pen(Color.Black, 2), new Rectangle(this.Location, this.Size));
-            g.FillEllipse(new SolidBrush(Color.Red), new Rectangle(this.Location, this.Size));
+
         }
 
         public void AddData(ICollection<FundsAlteration> data, Func<FundsAlteration, string> whichGroup, string[] groups)
@@ -71,6 +69,14 @@ namespace BudgetCalculator.Controls
             g.DrawEllipse(p, new Rectangle(this.Location, this.Size));
             g.FillEllipse(new SolidBrush(Color.Red), new Rectangle(this.Location, this.Size));
 
+            this.Invalidate();
+        }
+
+        private void BudgetPieChart_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = this.CreateGraphics();
+            g.DrawEllipse(new Pen(Color.Black, 2), new Rectangle(this.Location, this.Size));
+            g.FillEllipse(new SolidBrush(Color.Red), new Rectangle(this.Location, this.Size));
             this.Invalidate();
         }
     }

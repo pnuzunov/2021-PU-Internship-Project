@@ -27,14 +27,6 @@ namespace Budget_Calculator
             
             this.Load += MainForm_CalcBalance;
             this.VisibleChanged += MainForm_CalcBalance;
-
-            budgetPieChart.BringToFront();
-            budgetPieChart.AddData(
-                connectionManager.GetAlterations(),
-                x => x.Type,
-                new[] { FundsAlterationTypes.INCOME, FundsAlterationTypes.EXPENSE }
-                );
-            this.Invalidate();
         }
 
         public MainForm(String type)

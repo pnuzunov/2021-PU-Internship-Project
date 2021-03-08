@@ -29,8 +29,16 @@ namespace BudgetCalculator.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // BudgetPieChart
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "BudgetPieChart";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.BudgetPieChart_Paint);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

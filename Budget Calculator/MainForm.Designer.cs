@@ -249,6 +249,7 @@ namespace Budget_Calculator
             // 
             // budgetPieChart
             // 
+            this.budgetPieChart.BackColor = System.Drawing.Color.White;
             this.budgetPieChart.Location = new System.Drawing.Point(508, 28);
             this.budgetPieChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.budgetPieChart.Name = "budgetPieChart";
