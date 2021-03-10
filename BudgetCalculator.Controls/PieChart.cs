@@ -24,16 +24,11 @@ namespace BudgetCalculator.Controls
         private float angleIncomes;
         private float angleExpenses;
 
-        private Point piePoint;
-        private Size pieSize;
         private Rectangle pieRect;
 
         private Brush incomesBrush;
         private Brush expensesBrush;
 
-        private Size textSize;
-        private Point text1Point;
-        private Point text2Point;
         private Rectangle text1Rect;
         private Rectangle text2Rect;
 
@@ -43,7 +38,6 @@ namespace BudgetCalculator.Controls
 
         private Pen pen;
 
-        private Size colorRectSize;
         private Rectangle incomesColorRect;
         private Rectangle expensesColorRect;
 
@@ -61,25 +55,13 @@ namespace BudgetCalculator.Controls
                 Color.Cyan
             };
 
-            pieSize = new Size(this.Width / 3, this.Height);
-            piePoint = new Point(this.Width - this.Width / 4, 0);
-            //pieRect = new Rectangle(piePoint, pieSize);
             pieRect = new Rectangle(chartPanel.Location, chartPanel.Size);
 
             incomesBrush = new SolidBrush(availableColors[0]);
             expensesBrush = new SolidBrush(availableColors[1]);
 
-            colorRectSize = new Size(20, 20);
-            //incomesColorRect = new Rectangle(new Point(5, 5), colorRectSize);
-            //expensesColorRect = new Rectangle(new Point(5, this.Height / 2), colorRectSize);
             incomesColorRect = new Rectangle(incomesColorPanel.Location, incomesColorPanel.Size);
             expensesColorRect = new Rectangle(expensesColorPanel.Location, expensesColorPanel.Size);
-
-            text1Point = new Point(5 + incomesColorRect.Right, incomesColorRect.Top);
-            text2Point = new Point(5 + expensesColorRect.Right, expensesColorRect.Top);
-            textSize = new Size(this.Width, this.Height / 2);
-            //text1Rect = new Rectangle(text1Point, textSize);
-            //text2Rect = new Rectangle(text2Point, textSize);
 
             text1Rect = new Rectangle(incomesPanel.Location, incomesPanel.Size);
             text2Rect = new Rectangle(expensesPanel.Location, expensesPanel.Size);
@@ -127,18 +109,6 @@ namespace BudgetCalculator.Controls
 
             e.Graphics.DrawString("Приходи за избрания период: " + incomes, font, textBrush, text1Rect);
             e.Graphics.DrawString("Разходи за избрания период: " + expenses, font, textBrush, text2Rect);
-        }
-
-        private void buttonThisMonth_Click(object sender, EventArgs e)
-        {
-            this.data = rawData.Where(x => x.Date.Value.Month == DateTime.Now.Month).ToList();
-            this.Redraw();
-        }
-
-        private void buttonTotal_Click(object sender, EventArgs e)
-        {
-            this.data = this.rawData.ToList();
-            this.Redraw();
         }
     }
 }
