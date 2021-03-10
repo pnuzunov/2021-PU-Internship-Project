@@ -207,7 +207,11 @@ namespace BudgetCalculator.BackEnd.DB
             using(var context = new SystemDbContext())
             {
                 var checks = context.Set<PeriodicCheck>();
-                var checkToday = checks.Where(x => x.Date == date).FirstOrDefault();
+                var checkToday = checks
+                    .Where(x => x.Date.Value.Year == date.Value.Year
+                                && x.Date.Value.Month == date.Value.Month
+                                && x.Date.Value.Day == date.Value.Day)
+                    .FirstOrDefault();
                 if (checkToday != null) return true;
                 return false;
             }
