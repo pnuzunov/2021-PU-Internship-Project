@@ -7,13 +7,13 @@ namespace BudgetCalculator.BackEnd.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddFundsTable : IMigrationMetadata
+    public sealed partial class AddedPeriodicChecksTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFundsTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedPeriodicChecksTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102211521070_AddFundsTable"; }
+            get { return "202103100950309_AddedPeriodicChecksTable"; }
         }
         
         string IMigrationMetadata.Source

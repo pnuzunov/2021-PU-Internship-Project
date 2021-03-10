@@ -24,11 +24,10 @@ namespace Budget_Calculator
 
             this.dateChecker = dateChecker;
             ConnectionManager connectionManager = new ConnectionManager();
-            
+            this.pieChart.DrawFromData(connectionManager.GetAlterations());
+
             this.Load += MainForm_CalcBalance;
             this.VisibleChanged += MainForm_CalcBalance;
-
-            this.pieChart.DrawFromData(connectionManager.GetAlterations());
         }
 
         public MainForm(String type)
@@ -77,6 +76,7 @@ namespace Budget_Calculator
         {
             ConnectionManager connectionManager = new ConnectionManager();
             numericUpDownSum.Text = connectionManager.CalcBalance().ToString();
+            this.pieChart.DrawFromData(connectionManager.GetAlterations());
         }
       
     }

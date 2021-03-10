@@ -55,13 +55,13 @@
     <Compile Include="DB\DateChecker.cs" />
     <Compile Include="DB\SystemDbContext.cs" />
     <Compile Include="FundsAlterationTypes.cs" />
-    <Compile Include="Migrations\202102211521070_AddFundsTable.cs" />
-    <Compile Include="Migrations\202102211521070_AddFundsTable.designer.cs">
-      <DependentUpon>202102211521070_AddFundsTable.cs</DependentUpon>
+    <Compile Include="Migrations\202103100950309_AddedPeriodicChecksTable.cs" />
+    <Compile Include="Migrations\202103100950309_AddedPeriodicChecksTable.designer.cs">
+      <DependentUpon>202103100950309_AddedPeriodicChecksTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FundsAlteration.cs" />
-    <Compile Include="Models\PeriodicFundsAlteration.cs" />
+    <Compile Include="Models\PeriodicCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,8 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202102211521070_AddFundsTable.resx">
-      <DependentUpon>202102211521070_AddFundsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103100950309_AddedPeriodicChecksTable.resx">
+      <DependentUpon>202103100950309_AddedPeriodicChecksTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

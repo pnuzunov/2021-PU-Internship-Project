@@ -12,6 +12,7 @@ namespace BudgetCalculator.BackEnd.DB
     {
 
         public DbSet<FundsAlteration> FundsAlterations { get; set; }
+        public DbSet<PeriodicCheck> PeriodicChecks { get; set; }
 
         public SystemDbContext()
         {

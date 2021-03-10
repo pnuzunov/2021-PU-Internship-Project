@@ -201,5 +201,26 @@ namespace BudgetCalculator.BackEnd.DB
             // msg = ROW_ADDED_SUCCESSFULLY;
             // return true;
         }
+
+        public bool IsChecked(DateTime? date)
+        {
+            using(var context = new SystemDbContext())
+            {
+                var checks = context.Set<PeriodicCheck>();
+                var checkToday = checks.Where(x => x.Date == date).FirstOrDefault();
+                if (checkToday != null) return true;
+                return false;
+            }
+        }
+
+        public void MarkChecked(DateTime? date)
+        {
+            using (var context = new SystemDbContext())
+            {
+                var checks = context.Set<PeriodicCheck>();
+                checks.Add(new PeriodicCheck(date));
+                context.SaveChanges();
+            }
+        }
     }
 }
