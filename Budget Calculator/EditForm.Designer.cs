@@ -153,6 +153,7 @@ namespace Budget_Calculator
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditForm";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.EditForm_Load);
             this.ResumeLayout(false);
 
         }

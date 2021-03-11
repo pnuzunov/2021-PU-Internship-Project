@@ -51,5 +51,16 @@ namespace Budget_Calculator
                     ListBoxEdit.DataSource = connectionManager.GetAlterations();
             }
         }
+
+        private void EditForm_Load(object sender, EventArgs e)
+        {
+            this.VisibleChanged += EditForm_ListBoxRefresh;
+        }
+
+        private void EditForm_ListBoxRefresh(Object sender, EventArgs e)
+        {
+            ConnectionManager connectionManager = new ConnectionManager();
+            ListBoxEdit.DataSource = connectionManager.GetAlterations();
+        }
     }
 }
